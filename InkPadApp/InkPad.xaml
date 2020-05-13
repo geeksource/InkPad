@@ -1,0 +1,56 @@
+﻿<Window x:Class="InkPadApp.InkPad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InkPadApp"
+        mc:Ignorable="d"
+        Title="InkPad" Height="450" Width="800">
+    <Grid Name="mainGrid">
+        <StackPanel Orientation="Vertical">
+            <InkCanvas Name="inkCanvas"  EditingMode="Ink"  Panel.ZIndex="1"
+                       Width="{Binding ActualWidth, ElementName=mainGrid}"
+                       Height="{Binding ActualHeight, ElementName=mainGrid}" 
+                       MouseDown="InkCanvas_MouseDown" MouseMove="InkCanvas_MouseMove"
+                       StrokeCollected="InkCanvas_StrokeCollected"
+                       
+                       >
+            </InkCanvas>            
+            <Canvas Name="BottomDrawingToolbox" Height="50"  Width="250" HorizontalAlignment="Center" Margin="0 -120 0 0"  Panel.ZIndex="2">
+                <Grid Width="180" Height="50" Background="LightSteelBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Stroke="DarkMagenta" StrokeThickness="5" Margin="1" Grid.RowSpan="2" Width="49" Height="49" Fill="{Binding SelectedColor, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Rectangle MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown" Margin="1" Grid.Row="0" Grid.Column="1" Width="24" Height="24" Fill="Black"/>
+                    <Rectangle  MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="0" Grid.Column="2"  Width="24" Height="24" Fill="Yellow"/>
+                    <Rectangle  MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="0" Grid.Column="3"  Width="24" Height="24" Fill="Red"/>
+                    <Rectangle  MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="0" Grid.Column="4"  Width="24" Height="24" Fill="Blue"/>
+                    <Rectangle MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"   Margin="1" Grid.Row="0" Grid.Column="5"  Width="24" Height="24" Fill="Purple"/>
+
+                    <Rectangle MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="1" Grid.Column="1" Width="24" Height="24" Fill="Green"/>
+                    <Rectangle MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"   Margin="1" Grid.Row="1" Grid.Column="2"  Width="24" Height="24" Fill="Brown"/>
+                    <Rectangle  MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="1" Grid.Column="3"  Width="24" Height="24" Fill="Gray"/>
+                    <Rectangle MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"   Margin="1" Grid.Row="1" Grid.Column="4"  Width="24" Height="24" Fill="Orange"/>
+                    <Rectangle  MouseLeftButtonDown="ColorGridRectangle_MouseLeftButtonDown"  Margin="1" Grid.Row="1" Grid.Column="5"  Width="24" Height="24" Fill="Maroon"/>
+                </Grid>
+                <Button Name="btnPlay" Click="BtnPlay_Click" Content="Play" Canvas.Right="0"/>
+                <!--<Rectangle Canvas.Left="0" Canvas.Top="0" Width="200" Height="80" RadiusX="10" RadiusY="10"  Fill="LightSteelBlue"/>-->
+               
+            </Canvas>
+            <Slider Name="DrawingSlider" Margin="10 -25 10 10" Panel.ZIndex="2" Value="{Binding SiderValue, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ></Slider>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
