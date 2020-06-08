@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkPadApp", "InkPadApp\InkPadApp.csproj", "{8FDDF53C-A930-4949-BB54-0B7EC6D8EC6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteInputController", "RemoteInputController\RemoteInputController.csproj", "{D628D8AB-F995-4973-B699-57C33D809F64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8FDDF53C-A930-4949-BB54-0B7EC6D8EC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FDDF53C-A930-4949-BB54-0B7EC6D8EC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FDDF53C-A930-4949-BB54-0B7EC6D8EC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D628D8AB-F995-4973-B699-57C33D809F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D628D8AB-F995-4973-B699-57C33D809F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D628D8AB-F995-4973-B699-57C33D809F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D628D8AB-F995-4973-B699-57C33D809F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -46,7 +46,7 @@
                 </Grid>
                 <Button Name="btnPlay" Click="BtnPlay_Click" Content="Play" Canvas.Right="0"/>
                 <!--<Rectangle Canvas.Left="0" Canvas.Top="0" Width="200" Height="80" RadiusX="10" RadiusY="10"  Fill="LightSteelBlue"/>-->
-               
+                <Button Name="btnClear" Click="BtnClear_Click" Content="Clear" Canvas.Right="25" Canvas.Bottom="0"/>
             </Canvas>
             <Slider Name="DrawingSlider" Margin="10 -25 10 10" Panel.ZIndex="2" Value="{Binding SiderValue, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ></Slider>
         </StackPanel>
