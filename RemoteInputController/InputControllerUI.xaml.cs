@@ -30,7 +30,7 @@ namespace RemoteInputController
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             webSocketServer = new WebSocketServer();
-            int port = 5050;
+            int port = 80;
             webSocketServer.Setup(port);
             webSocketServer.NewSessionConnected += WebSocketServer_NewSessionConnected;
             webSocketServer.NewDataReceived += WebSocketServer_NewDataReceived;
@@ -48,7 +48,7 @@ namespace RemoteInputController
         }        
         private void WebSocketServer_NewMessageReceived(WebSocketSession session, string value)
         {
-            
+            session.Send("No Rocking Shocking!");
         }
         private void WebSocketServer_SessionClosed(WebSocketSession session, SuperSocket.SocketBase.CloseReason value)
         {
