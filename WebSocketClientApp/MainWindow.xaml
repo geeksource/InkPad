@@ -1,0 +1,26 @@
+﻿<Window x:Class="WebSocketClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebSocketClientApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="600">
+    <StackPanel Orientation="Vertical">
+        <Grid Margin="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Web Socket Server Url:"></Label>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="txtWebUrl"/>
+            <Button Grid.Row="1" HorizontalAlignment="Center" Grid.Column="2" Name="btnConnect" Click="BtnConnect_Click" Margin="20" Content="Connect" Width="120" Height="30"/>
+            <Button Name="btnSend" Click="BtnSend_Click" Content="Send Hello" Grid.Row="2" Grid.Column="2" Width="150" Height="30"/>
+        </Grid>
+    </StackPanel>
+</Window>
