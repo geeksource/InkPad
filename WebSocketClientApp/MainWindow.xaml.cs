@@ -37,6 +37,7 @@ namespace WebSocketClientApp
                 webSocket = new WebSocket(Url);
                 webSocket.OnMessage += WebSocket_OnMessage;
                 webSocket.ConnectAsync();
+                Debug.WriteLine("Server is listening on :"+Url);
             }
             catch (Exception ex)
             {
